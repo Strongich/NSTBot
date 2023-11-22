@@ -1,5 +1,5 @@
-FROM python:3.11.5 AS bot
-FROM nvidia/cuda:12.3.0-devel-ubuntu22.04
+FROM python:3.11 AS bot
+FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
 ENV TOKEN=${TOKEN}
 
 RUN apt-get update && apt-get install -y libpq-dev build-essential

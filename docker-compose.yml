@@ -4,6 +4,13 @@ services:
   bot:
     build:
       context: "."
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
       dockerfile: Dockerfile
     environment:
       TOKEN: ${TOKEN}
